@@ -23,14 +23,13 @@ def get_feedback(url):
     results = []
     json_result = get_request(url)
     if json_result:
-        feedbacks = json_result["body"]
+        feedbacks = json_result["body"]["data"]["docs"]
         for feedback in feedbacks:
-            fb_doc = dealer["doc"]
             fb_obj = UserFeedback(
-                name=fb_doc["name"],
-                surname=fb_doc["surname"],
-                email=fb_doc["email"],
-                feedback=fb_doc["feedback"]  
+                name=feedback["name"],
+                surname=feedback["surname"],
+                email=feedback["email"],
+                feedback=feedback["feedback"]  
             )
             results.append(fb_obj)
     return results

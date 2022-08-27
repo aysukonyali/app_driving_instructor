@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404, render, redirect
 # from .models import related models
 # from .restapis import related methods
+from .models import UserFeedback
+from .restapis import get_feedback
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from datetime import datetime
@@ -38,9 +40,12 @@ logger = logging.getLogger(__name__)
 # ...
 
 # Update the `get_dealerships` view to render the index page with a list of dealerships
-def get_dealerships(request):
-    context = {}
+def get_feedbacks(request):
     if request.method == "GET":
+        url = "https://439290d0.eu-de.apigw.appdomain.cloud/driving/feedbacks"
+        feedbacks = get_feedback(url)
+        context = {}
+        context["feedbacks"] = feedbacks
         return render(request, 'djangoapp/index.html', context)
 
 
