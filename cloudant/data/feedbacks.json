@@ -1,0 +1,16 @@
+{
+    "feedbacks": [
+      {
+        "name": "Suzan",
+        "surname": "Korkmaz",
+        "email": "skrkmz@hotmail.com",
+        "feedback": "Great teacher! She helped me to overcome my fear"
+      },
+      {
+        "name": "Ayşe",
+        "surname": "Öztürk",
+        "email": "ayseozturk@gmail.com",
+        "feedback": "Çok kısa sürede direksiyon hakimiyetimi geliştirdim. Artık tek başıma trafiğe çıkabiliyorum."
+      }
+    ]
+  }
