@@ -45,6 +45,7 @@ def get_feedbacks(request):
         url = "https://439290d0.eu-de.apigw.appdomain.cloud/driving/feedbacks"
         feedbacks = get_feedback(url)
         context = {}
+        #feedbacks.sort(key=lambda x: x["name"])
         context["feedbacks"] = feedbacks
         return render(request, 'djangoapp/index.html', context)
     elif request.method == "POST":

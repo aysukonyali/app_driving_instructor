@@ -86,13 +86,14 @@
                 <div class="container-fluid">
                 <div class="card-decks">
                 {% for feedback in feedbacks %}
-                                  
+                        {% if forloop.counter <= 5 %}    
+                        
                         <div class="card border-primary mb-3" style="min-width: 40rem;">
                             <h5 class="card-title">{{feedback.name}}, {{feedback.surname}} </h5>
                             <p class="card-text">{{feedback.feedback}}</p>
-                           
+                        
                         </div>
-                    
+                        {% endif %}
                 {% endfor %}
                 </div>
             </div>
