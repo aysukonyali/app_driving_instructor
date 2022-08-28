@@ -28,6 +28,7 @@
         
         li {
           float: left;
+          padding: 10x
         }
         
         li a {
@@ -41,6 +42,25 @@
         li a:hover {
           background-color: #978AA8;
         }
+        .column {
+         float: left;
+         padding: 40x;
+        }
+
+        .left {
+         width: 60%;
+        }
+
+            .right {
+            width: 40%;
+            }
+
+            /* Clear floats after the columns */
+            .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
         
         </style>
 </head>
@@ -61,22 +81,55 @@
                 <img src="https://theiadocker-3-labs-prod-theiak8s-4-tor01.labs.cognitiveclass.ai/user/cansukonyali/files/download/?id=0a11b33e-71fa-4c66-8dee-994f4a90452e" alt="alternatetext">
             </div>
           </div>
-          
-          <div class="container">
-            <div class="card-deck">
-                {% for feedback in feedbacks %}
-                    <div class="card" style="width: 36rem;">
-                        <div class="card-body bg-light">
-                            
+          <div class="row">
+            <div class="column left" style="background-color:#aaa;">
+                <div class="container-fluid">
+                <div class="card-deck">
+                    {% for feedback in feedbacks %}
+                        <div class="card border-primary mb-3" style="max-width: 30rem;">
                             <h5 class="card-title">{{feedback.name}}, {{feedback.surname}} </h5>
                             <p class="card-text">{{feedback.feedback}}</p>
-
+                           
                         </div>
-                    </div>
-                
-                {% endfor %}
+                    
+                    {% endfor %}
+                </div>
             </div>
-        </div>
+            </div>
+            <div class="column right" style="background-color:#bbb;">
+                <form action="{ %url 'djangoapp:add_review' }" method="post">
+                    <h8> Write your Feedback! </h8>
+                    <div class="form-group">
+            
+                          <div class="mb-3">
+                              <label for="name"><b>name: </b></label>
+                              <textarea class="form-control" id="name" name="name" rows="1" required></textarea>
+                          </div>
+            
+                          <div class="mb-3">
+                            <label for="surname"><b>surname: </b></label>
+                            <textarea class="form-control" id="surname" name="surname" rows="1" required></textarea>
+                          </div>
+            
+                          <div class="mb-3">
+                            <label for="email"><b>email: </b></label>
+                            <textarea class="form-control" id="email" name="email" rows="1" required></textarea>
+                          </div>
+            
+                          <div class="mb-3">
+                              <label for="fback"><b>feedback: </b></label>
+                              <textarea class="form-control" id="fback" name="fback" rows="1" required></textarea>
+                          </div>
+            
+                    </div>
+                    {% csrf_token %}
+                    <div>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+          </div>
+         
           
 
     </body>

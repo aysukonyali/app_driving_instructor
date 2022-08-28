@@ -20,10 +20,11 @@ urlpatterns = [
     # path for logout
 
     path(route='', view=views.get_feedbacks, name='index'),
-
+    path('add_review/', views.add_feedback, name='add_review'),
 
     # path for dealer reviews view
 
     # path for add a review view
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
