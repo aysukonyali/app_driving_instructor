@@ -20,7 +20,7 @@ urlpatterns = [
     # path for logout
 
     path(route='', view=views.get_feedbacks, name='index'),
-    path('add_review/', views.add_feedback, name='add_review'),
+    #path('add_review/', views.add_feedback, name='add_review'),
 
     # path for dealer reviews view
 

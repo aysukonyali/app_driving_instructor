@@ -35,11 +35,11 @@ def get_feedback(url):
     return results
 
 
-def post_request(url, payload, **kwargs):
-    print(kwargs)
+def post_request(url, payload):
+    #print(kwargs)
     print("POST to {} ".format(url))
     print(payload)
-    response = requests.post(url, params=kwargs, json=payload)
+    response = requests.post(url, json=payload)
     status_code = response.status_code
     print("With status {} ".format(status_code))
     json_data = json.loads(response.text)

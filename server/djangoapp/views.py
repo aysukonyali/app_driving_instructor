@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 # from .models import related models
 # from .restapis import related methods
 from .models import UserFeedback
-from .restapis import get_feedback
+from .restapis import get_feedback,post_request
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from datetime import datetime
@@ -47,6 +47,18 @@ def get_feedbacks(request):
         context = {}
         context["feedbacks"] = feedbacks
         return render(request, 'djangoapp/index.html', context)
+    elif request.method == "POST":
+        feedback = {}
+        form = request.POST
+        feedback["name"] = form["name"]
+        feedback["surname"] =form["surname"]
+        feedback["email"]=form["email"]
+        feedback["feedback"] = form["fback"]
+        post_url = "https://439290d0.eu-de.apigw.appdomain.cloud/driving/feedbacks"
+        json_payload = { "feedback": feedback }
+        post_request(post_url, json_payload)
+        return redirect("djangoapp:index")
+
 
 
 # Create a `get_dealer_details` view to render the reviews of a dealer
@@ -59,7 +71,7 @@ def add_feedback(request):
             feedback = {}
             form = request.POST
             feedback["name"] = form["name"]
-            feedback["surnmae"] =form["surname"]
+            feedback["surname"] =form["surname"]
             feedback["email"]=form["email"]
             feedback["feedback"] = form["fback"]
             post_url = "https://439290d0.eu-de.apigw.appdomain.cloud/driving/feedbacks"
