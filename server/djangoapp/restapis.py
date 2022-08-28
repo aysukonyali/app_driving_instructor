@@ -3,6 +3,7 @@ import json
 from .models import UserFeedback
 from requests.auth import HTTPBasicAuth
 
+
 def get_request(url, **kwargs):
     print(kwargs)
     print("GET from {} ".format(url))
@@ -32,6 +33,7 @@ def get_feedback(url):
                 feedback=feedback["feedback"]  
             )
             results.append(fb_obj)
+           
     return results
 
 

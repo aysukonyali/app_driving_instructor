@@ -65,20 +65,6 @@ def get_feedbacks(request):
 # def get_dealer_details(request, dealer_id):
 # ...
 
-# Create a `add_review` view to submit a review
-def add_feedback(request):
-     if request.method == "POST":
-            feedback = {}
-            form = request.POST
-            feedback["name"] = form["name"]
-            feedback["surname"] =form["surname"]
-            feedback["email"]=form["email"]
-            feedback["feedback"] = form["fback"]
-            post_url = "https://439290d0.eu-de.apigw.appdomain.cloud/driving/feedbacks"
-            json_payload = { "feedback": feedback }
-            post_request(post_url, json_payload)
-            return redirect("djangoapp:index")
-     else:
-        return redirect("/djangoapp/index")    
+   
 
 

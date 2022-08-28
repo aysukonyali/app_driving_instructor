@@ -84,15 +84,16 @@
           <div class="row">
             <div class="column left" style="background-color:#aaa;">
                 <div class="container-fluid">
-                <div class="card-deck">
-                    {% for feedback in feedbacks %}
-                        <div class="card border-primary mb-3" style="max-width: 30rem;">
+                <div class="card-decks">
+                {% for feedback in feedbacks %}
+                                  
+                        <div class="card border-primary mb-3" style="min-width: 40rem;">
                             <h5 class="card-title">{{feedback.name}}, {{feedback.surname}} </h5>
                             <p class="card-text">{{feedback.feedback}}</p>
                            
                         </div>
                     
-                    {% endfor %}
+                {% endfor %}
                 </div>
             </div>
             </div>
@@ -135,4 +136,3 @@
     </body>
 
 </html>
-
