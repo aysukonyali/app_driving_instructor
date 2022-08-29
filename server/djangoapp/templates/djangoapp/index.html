@@ -51,16 +51,23 @@
          width: 60%;
         }
 
-            .right {
-            width: 40%;
-            }
+        .right {
+         width: 40%;
+        }
 
-            /* Clear floats after the columns */
-            .row:after {
-            content: "";
-            display: table;
-            clear: both;
-            }
+        /* Clear floats after the columns */
+        .row:after {
+         content: "";
+         display: table;
+         clear: both;
+        }
+        div.overflow {
+        
+        white-space: nowrap;  
+        width: 47rem; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        }
         
         </style>
 </head>
@@ -88,11 +95,16 @@
                 {% for feedback in feedbacks %}
                         {% if forloop.counter <= 5 %}    
                         
-                        <div class="card border-primary mb-3" style="min-width: 40rem;">
-                            <h5 class="card-title">{{feedback.name}}, {{feedback.surname}}
+                        <div class="card border-primary mb-3" style="width: 47rem;">
+                            <div class="overflow">
+                            <h5 class="card-title">&nbsp;&nbsp;{{feedback.name}}, {{feedback.surname}}
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{feedback.date}} </h5>
-                            <p class="card-text">{{feedback.feedback}}</p>
-                        
+                            
+                            <p class="card-text" > 
+                                <div class="overflow" style="font-size: 0.700em;">&nbsp;&nbsp;{{feedback.feedback}}</div>
+                            </p> 
+                            
+                        </div>    
                         </div>
                         {% endif %}
                 {% endfor %}
@@ -105,22 +117,22 @@
                     <div class="form-group">
             
                           <div class="mb-3">
-                              <label for="name"><b>name: </b></label>
+                              <label for="name"><b style="font-size: 0.800em;">name: </b></label>
                               <textarea class="form-control" id="name" name="name" rows="1" required></textarea>
                           </div>
             
                           <div class="mb-3">
-                            <label for="surname"><b>surname: </b></label>
+                            <label for="surname"><b style="font-size: 0.800em;">surname: </b></label>
                             <textarea class="form-control" id="surname" name="surname" rows="1" required></textarea>
                           </div>
             
                           <div class="mb-3">
-                            <label for="email"><b>email: </b></label>
+                            <label for="email"><b style="font-size: 0.800em;">email: </b></label>
                             <textarea class="form-control" id="email" name="email" rows="1" required></textarea>
                           </div>
             
                           <div class="mb-3">
-                              <label for="fback"><b>feedback: </b></label>
+                              <label for="fback"><b style="font-size: 0.800em;">feedback: </b></label>
                               <textarea class="form-control" id="fback" name="fback" rows="1" required></textarea>
                           </div>
             
