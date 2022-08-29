@@ -30,7 +30,8 @@ def get_feedback(url):
                 name=feedback["name"],
                 surname=feedback["surname"],
                 email=feedback["email"],
-                feedback=feedback["feedback"]  
+                feedback=feedback["feedback"],
+                date=feedback["date"] 
             )
             results.append(fb_obj)
            

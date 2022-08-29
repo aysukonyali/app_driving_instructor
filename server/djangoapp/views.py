@@ -11,6 +11,7 @@ from django.contrib import messages
 from datetime import datetime
 import logging
 import json
+from datetime import date
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -45,7 +46,7 @@ def get_feedbacks(request):
         url = "https://439290d0.eu-de.apigw.appdomain.cloud/driving/feedbacks"
         feedbacks = get_feedback(url)
         context = {}
-        #feedbacks.sort(key=lambda x: x["name"])
+        feedbacks.sort(key=lambda x: x.date,reverse=True)
         context["feedbacks"] = feedbacks
         return render(request, 'djangoapp/index.html', context)
     elif request.method == "POST":
@@ -55,6 +56,7 @@ def get_feedbacks(request):
         feedback["surname"] =form["surname"]
         feedback["email"]=form["email"]
         feedback["feedback"] = form["fback"]
+        feedback["date"]= date.today().strftime("%d/%m/%Y")
         post_url = "https://439290d0.eu-de.apigw.appdomain.cloud/driving/feedbacks"
         json_payload = { "feedback": feedback }
         post_request(post_url, json_payload)
