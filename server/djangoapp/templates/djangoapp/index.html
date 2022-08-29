@@ -25,7 +25,7 @@
         }
         img {vertical-align: middle;}
         
-        ul {
+        ul.second {
           list-style-type: none;
           margin: 0;
           padding: 0;
@@ -36,7 +36,7 @@
           top: 0;
         }
         
-        li {
+        li.first {
           float: left;
           padding: 10x
         }
@@ -152,6 +152,11 @@
         @media only screen and (max-width: 300px) {
         .prev, .next,.text {font-size: 11px}
         }
+        p.ex1 {
+        padding-left: 65px;
+        padding-right: 65px;
+        border-style: outset;
+        }
 
         </style>
 </head>
@@ -159,12 +164,12 @@
     <body>
         
           
-          <ul>
-            <li><a href="#home">Anasayfa</a></li>
-            <li><a href="#news">Figen Hoca Kimdir?</a></li>
-            <li><a href="#news">Dersler Hakkında</a></li>
-            <li><a href="#contact">Öğrenci Yorumları</a></li>
-            <li><a href="#contact">İletişim</a></li>
+          <ul class="second">
+            <li class="first"><a href="#home">Homepage</a></li>
+            <li class="first"><a href="#news">Who is Figen Korkutan?</a></li>
+            <li class="first"><a href="#news">About Lessons</a></li>
+            <li class="first"><a href="#contact">Student Feedbacks</a></li>
+            <li class="first"><a href="#contact">Contact</a></li>
           </ul>
 
           <br>
@@ -175,7 +180,7 @@
                  width="1000" height="400">
                 <div class="centered">
                     <div id="myDIV"> 
-                   <h1>  <strong>Figen Hoca' dan Bayanlara Özel Direksiyon Dersi </strong> </h1>
+                   <h1>  <strong>Private Steering Lessons by Figen Korkutan </strong> </h1>
                    </div>  
                 </div> 
             </div>
@@ -185,7 +190,8 @@
                  width="1000" height="450">
                 <div class="centered">
                     <div id="myDIV">
-                    <h1>  <strong> 25 Yıllık Tecrübe ile 100% Öğretme Garantisi </strong> </h1>
+                    <h1>  <strong> 
+                        100% Teaching Guarantee with 25 Years of Experience </strong> </h1>
                   </div>
                         
                 </div>
@@ -222,11 +228,34 @@
         </script>
 
         <!-- --------------------------------------------------Slide Show----------------------------------------- -->  
-          <h1> Feedbacks from previous Students of Figen Hoca </h1>
-          <div class="row">
+        <br>
+        <p class="ex1", style="font-size:19px;">
+            Milli Eğitim Bakanlığı'ndan öğretmen belgesine sahip olup direksiyon eğitimi vermekteyim. Direksiyon eğitimi almak isteyenlere üstün hizmet kalitesini ilke edinerek uzun yıllardan bu yana eğitim vermekteyim. Uzun yılların bilgi birikimi ve tecrübesiyle %100 öğrencilerin memnuniyetini ilke edinmiş, konusunda uzman, yaptığı işte başarıyı en üst seviyede tutmaya çalışmayı amaç edindim.
+        </p>
+        <br>
+        <p class="ex1", style="font-size:19px;">
+            Temel amacımız; trafikte hem yasal hem sosyal sorumluluklarını karşılıklı sevgi ve saygıyla yerine getiren örnek sürücü yetiştirmektir. Direksiyon eğitimimiz her araç kullanmayı bilenden alınan sıradan bir eğitim değildir. Sınavlarda uygulanan tekniklerle ehliyetinizi almak sürücü olmak için yeterli değildir. Bu durum asla hafife alınamaz. Araba kullanmak şakaya gelmez. Direksiyon dersi uzman işidir. Arabayı kullanmayı bilenden değil, bunun eğitimini veren kişiden alınmalıdır. Bu nedenle size tavsiyem mutlaka Milli Eğitim Bakanlığı'ndan onaylı sertifikaya ve gerekli yetkiye sahip hocadan ders almanızdır.
+        </p>   
+       
+        <ul>
+            <li class="ex1", style="font-size:16px;">  Ehliyet aldınız ama aldığınız eğitimin sizin için yeterli olmadığını düşünüyorsanız, </li>
+            
+            <li class="ex1", style="font-size:16px;">   Kendinizi şehir trafiğinde araç kullanmaya hazır hissetmiyorsanız, </li>
+            
+            <li class="ex1", style="font-size:16px;">  Ehliyetinizi aldınız ama şehir trafiğinde araç kullanmakta zorlanıyorsanız, </li>
+            
+            <li class="ex1",  style="font-size:16px;">   Ehliyetim- arabam var ama araç kullanmaya korkuyorum diyorsanız, </li>
+        </ul>   
+
+        <p class="ex1", style="font-size:19px;">  Gelin birlikte çalışıp iyi bir sürücü olmayı problem olmaktan çıkaralım. Hiçbir başarı tesadüf değildir. Gelin birlikte başaralım… </p>
+        </p>    
+        <br>
+        <br>
+          <p class="ex1"> <strong> Feedbacks from previous Students of Figen Hoca </strong></p1>
+          <div class="row", class="ex1">
             <div class="column left" style="background-color:#aaa;">
                 <div class="container-fluid">
-                <div class="card-decks">
+                <div class="ex1", class="card-decks">
                 {% for feedback in feedbacks %}
                         {% if forloop.counter <= 5 %}    
                         
