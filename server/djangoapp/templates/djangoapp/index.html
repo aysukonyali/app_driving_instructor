@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Direksiyon Hocası Figen Hoca</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -11,9 +12,18 @@
     <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
     <style>
-        body {
-          font-size: 28px;
+      
+        * {box-sizing: border-box}
+        body {font-family: Verdana, sans-serif; 
+        margin:0; font-size: 26px;
         }
+        .mySlides {
+        display: none;
+        position: relative;
+        text-align: center;
+        color: white;
+        }
+        img {vertical-align: middle;}
         
         ul {
           list-style-type: none;
@@ -68,16 +78,79 @@
         overflow: hidden;
         text-overflow: ellipsis; 
         }
-        .about-img {
-        position: relative;
-        text-align: center;
-        color: white;
-        }
+        
         .centered {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        }
+        #myDIV {
+        text-shadow: 5px 5px 10px blue;
+        }
+        .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+        }
+        /* Next & previous buttons */
+        .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        }
+
+/* Position the "next button" to the right */
+        .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        }
+
+/* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+        }
+
+
+/* The dots/bullets/indicators */
+        .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0s ease;
+        }
+
+        .active, .dot:hover {
+         background-color: #717171;
+        }
+
+/* Fading animation */
+        .fade {
+        animation-name: fade;
+        animation-duration: 3s;
+        }
+
+        @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+        }
+
+/* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+        .prev, .next,.text {font-size: 11px}
         }
 
         </style>
@@ -95,25 +168,60 @@
           </ul>
 
           <br>
-          
-
-            <div class="about-img">
-                <img src="https://i0.wp.com/journo.com.tr/wp-content/uploads/2020/04/WhatsApp-Image-2020-04-16-at-20.32.03-4.jpeg?w=1600&ssl=1" 
-                alt=""  width="1100" height="550">
+        <!-- --------------------------------------------------Slide Show----------------------------------------- -->  
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="https://www.seyirkafe.com/wp-content/uploads/2015/03/Across-forest.jpg" 
+                 width="1000" height="400">
                 <div class="centered">
-                    <h1>  <strong>Figen Hoca' dan Bayanlara Özel Direksiyon Dersi </strong> </h1>
-                </div>
+                    <div id="myDIV"> 
+                   <h1>  <strong>Figen Hoca' dan Bayanlara Özel Direksiyon Dersi </strong> </h1>
+                   </div>  
+                </div> 
             </div>
-            <br>
-            <div class="about-img">
+            
+            <div class="mySlides fade">
                 <img src="https://www.tasimacilar.com/d/other/figen-korkutan.jpg" 
-                alt=""  width="1100" height="550">
+                 width="1000" height="450">
                 <div class="centered">
-                    <h1>  <strong> 100% Öğrenme Garantisi </strong> </h1>
+                    <div id="myDIV">
+                    <h1>  <strong> 25 Yıllık Tecrübe ile 100% Öğretme Garantisi </strong> </h1>
+                  </div>
+                        
                 </div>
             </div>
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
           <br>
+          <div style="text-align:center">
+            <span class="dot" ></span> 
+            <span class="dot" ></span> 
+          </div>
+          
+        <script>
+            let slideIndex = 0;
+            showSlides();
 
+            function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 3000); // Change image every 2 seconds
+            }
+        </script>
+
+        <!-- --------------------------------------------------Slide Show----------------------------------------- -->  
           <h1> Feedbacks from previous Students of Figen Hoca </h1>
           <div class="row">
             <div class="column left" style="background-color:#aaa;">
