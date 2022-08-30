@@ -9,7 +9,8 @@ urlpatterns = [
     # view refers to the view function
     # name the URL
 
-    # path for about view
+    # path for yourmlar  view
+    path('yorumlar/', views.yorumlar, name='yorumlar'),
 
     # path for contact us view
 

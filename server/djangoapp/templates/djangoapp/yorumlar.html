@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Öğrenci Yorumları</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>  
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+    <style>
+      
+        * {box-sizing: border-box}
+        body {font-family: Verdana, sans-serif; 
+        margin:0; font-size: 20px;
+        }
+        
+        ul.second {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+          position: -webkit-sticky; /* Safari */
+          position: sticky;
+          top: 0;
+        }
+        
+        li.first {
+          float: left;
+          padding: 10x
+        }
+        
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 20px;
+          text-decoration: none;
+        }
+        
+        li a:hover {
+          background-color: #978AA8;
+        }
+        .column {
+         float: left;
+         padding: 40x;
+        }
+
+        .left {
+         width: 60%;
+        }
+
+        .right {
+         width: 40%;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+         content: "";
+         display: table;
+         clear: both;
+        }
+        div.overflow {
+        
+        width: 47rem; 
+        
+        }
+        
+        .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+        p.ex1 {
+        padding-left: 80px;
+        padding-right: 80px;
+        border-style: outset;
+        }
+        
+        .fa-instagram {   /* instagram icon */
+        background: #125688;
+        color: white;
+        padding: 5px;
+        font-size: 40px;
+        width: 60px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        left:1065px; 
+        top:3px;
+        position:Relative;
+        }
+        .fa-facebook {
+        background: #3B5998;
+        color: white;
+        padding: 5px;
+        font-size: 40px;
+        width: 60px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        left:1060px; 
+        top:3px;
+        position:Relative;
+        }
+        .fa-phone {
+        padding: 5px;
+        font-size: 40px;
+        width: 60px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        left:1048px; 
+        top:8px;
+        position:Relative;
+}
+        
+        </style>
+</head>
+
+    <body>
+        
+          
+          <ul class="second">
+            <li class="first"><a href="#home">Anasayfa</a></li>
+            <li class="first"><a href="#news">Figen Hoca Kimdir?</a></li>
+            <li class="first"><a href="#news">Dersler Hakkında</a></li>
+            <li class="first"><a href="#contact">Öğrenci Yorumları</a></li>
+            <li class="first"><a href="#contact">İletişim</a></li>
+          </ul>
+
+          <a href="https://www.instagram.com/direksiyondersi.figenhoca/" class="fa fa-instagram"></a>    <!-- instagram icon -->
+          <a href="https://www.facebook.com/figen.korkutan" class="fa fa-facebook"></a>    <!-- facebook icon -->
+          <a href="tel:+905352323149">
+            <i class="fa fa-phone" style="font-size:48px;color:red"></i>
+          </a> 
+
+
+       
+        <br>
+          <p class="ex1"> <strong> Figen Hoca'nın Öğrencilerinin Yaptıkları Yorumlar </strong></p1>
+          <div class="row", class="ex1">
+            <div class="column left" style="background-color:#aaa;">
+                <div class="container-fluid">
+                <div class="ex1", class="card-decks">
+                {% for feedback in feedbacks %} 
+                        
+                        <div class="card border-primary mb-3" style="width: 47rem;">
+                            <div class="overflow">
+                            <h5 class="card-title">&nbsp;&nbsp;{{feedback.name}}, {{feedback.surname}}
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{feedback.date}} </h5>
+                            
+                            <p class="card-text" > 
+                                <div style="font-size: 0.700em;">&nbsp;&nbsp;{{feedback.feedback}}</div>
+                            </p> 
+                            
+                        </div>    
+                        </div>
+                     
+                {% endfor %}
+                </div>
+
+            </div>
+            </div>
+            <div class="column right" style="background-color:#bbb;">
+                <form action="{% url 'djangoapp:index' %}"method="post">
+                    <h8> Write your Feedback! </h8>
+                    <div class="form-group">
+            
+                          <div class="mb-3">
+                              <label for="name"><b style="font-size: 0.800em;">name: </b></label>
+                              <textarea class="form-control" id="name" name="name" rows="1" required></textarea>
+                          </div>
+            
+                          <div class="mb-3">
+                            <label for="surname"><b style="font-size: 0.800em;">surname: </b></label>
+                            <textarea class="form-control" id="surname" name="surname" rows="1" required></textarea>
+                          </div>
+            
+                          <div class="mb-3">
+                            <label for="email"><b style="font-size: 0.800em;">email: </b></label>
+                            <textarea class="form-control" id="email" name="email" rows="1" required></textarea>
+                          </div>
+            
+                          <div class="mb-3">
+                              <label for="fback"><b style="font-size: 0.800em;">feedback: </b></label>
+                              <textarea class="form-control" id="fback" name="fback" rows="1" required></textarea>
+                          </div>
+            
+                    </div>
+                    {% csrf_token %}
+                    <div>
+                        <button class="btn btn-primary" type="submit">Gönder</button>
+                    </div>
+                </form>
+            </div>
+          </div>
+         
+          
+
+    </body>
+
+</html>
