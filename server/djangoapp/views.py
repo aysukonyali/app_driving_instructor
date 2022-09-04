@@ -65,8 +65,17 @@ def get_feedbacks(request):
         return redirect("djangoapp:index")
 
 
+def figen_hoca_kimdir(request):
+    context = {}
+    return render(request, 'djangoapp/figen_hoca_kimdir.html', context)
 
+def dersler_hakkinda(request):
+    context = {}
+    return render(request, 'djangoapp/dersler_hakkinda.html', context)
 
+def iletisim(request):
+    context = {}
+    return render(request, 'djangoapp/iletisim.html', context)
    
 
 

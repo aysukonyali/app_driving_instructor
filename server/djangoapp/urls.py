@@ -11,7 +11,9 @@ urlpatterns = [
 
     # path for yourmlar  view
     path('yorumlar/', views.yorumlar, name='yorumlar'),
-
+    path('figen_hoca_kimdir/', views.figen_hoca_kimdir, name='figen_hoca_kimdir'),
+    path('dersler_hakkinda/', views.dersler_hakkinda, name='dersler_hakkinda'),
+    path('iletisim/', views.iletisim, name='iletisim'),
     # path for contact us view
 
     # path for registration

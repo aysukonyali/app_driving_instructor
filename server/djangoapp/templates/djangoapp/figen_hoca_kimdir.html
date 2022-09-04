@@ -142,66 +142,13 @@
             <i class="fa fa-phone" style="font-size:48px;color:red"></i>
           </a> 
 
-
-       
         <br>
-          <p class="ex1"> <strong> Figen Hoca'nın Öğrencilerinin Yaptıkları Yorumlar </strong></p1>
-          <div class="row", class="ex1">
-            <div class="column left" style="background-color:#aaa;">
-                <div class="container-fluid">
-                <div class="ex1", class="card-decks">
-                {% for feedback in feedbacks %} 
-                        
-                        <div class="card border-primary mb-3" style="width: 47rem;">
-                            <div class="overflow">
-                            <h5 class="card-title">&nbsp;&nbsp;{{feedback.name}}, {{feedback.surname}}
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{feedback.date}} </h5>
-                            
-                            <p class="card-text" > 
-                                <div style="font-size: 0.700em;">&nbsp;&nbsp;{{feedback.feedback}}</div>
-                            </p> 
-                            
-                        </div>    
-                        </div>
-                     
-                {% endfor %}
-                </div>
-
-            </div>
-            </div>
-            <div class="column right" style="background-color:#bbb;">
-                <form action="{% url 'djangoapp:index' %}"method="post">
-                    <h8> Write your Feedback! </h8>
-                    <div class="form-group">
-            
-                          <div class="mb-3">
-                              <label for="name"><b style="font-size: 0.800em;">name: </b></label>
-                              <textarea class="form-control" id="name" name="name" rows="1" required></textarea>
-                          </div>
-            
-                          <div class="mb-3">
-                            <label for="surname"><b style="font-size: 0.800em;">surname: </b></label>
-                            <textarea class="form-control" id="surname" name="surname" rows="1" required></textarea>
-                          </div>
-            
-                          <div class="mb-3">
-                            <label for="email"><b style="font-size: 0.800em;">email: </b></label>
-                            <textarea class="form-control" id="email" name="email" rows="1" required></textarea>
-                          </div>
-            
-                          <div class="mb-3">
-                              <label for="fback"><b style="font-size: 0.800em;">feedback: </b></label>
-                              <textarea class="form-control" id="fback" name="fback" rows="1" required></textarea>
-                          </div>
-            
-                    </div>
-                    {% csrf_token %}
-                    <div>
-                        <button class="btn btn-primary" type="submit">Gönder</button>
-                    </div>
-                </form>
-            </div>
-          </div>
+        <br>
+        <p class="ex1"> <strong> Figen Korkutan İstanbul'da ikamet etmektedir. Çeşitli sürücü kurslarında direksiyon  
+            eğitimi verdikten sonra özel direkyiyon hocası olarak meslek hayatına devam etmektedir. MEB Onaylı direksiyon hocası
+            Figen Hoca 25 yıllık meslek tecrübesine sahiptir. Engin bilgisi ve sıcak kanlı yapısıyla ders verdiği öğrencilerinin hepsi en kısa sürede
+            trafikte yaşağı korkuları yenmiş ve güçlü bir direksiyon hakimiyeti kazanmıştır.</strong></p1>
+          
          
           
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Öğrenci Yorumları</title>
+    <title>İletişim</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>  
@@ -72,12 +72,7 @@
         
         }
         
-        .centered {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        }
+      
         p.ex1 {
         padding-left: 80px;
         padding-right: 80px;
@@ -120,7 +115,12 @@
         left:1048px; 
         top:8px;
         position:Relative;
-}
+        }
+        img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
         
         </style>
 </head>
@@ -142,66 +142,18 @@
             <i class="fa fa-phone" style="font-size:48px;color:red"></i>
           </a> 
 
-
-       
         <br>
-          <p class="ex1"> <strong> Figen Hoca'nın Öğrencilerinin Yaptıkları Yorumlar </strong></p1>
-          <div class="row", class="ex1">
-            <div class="column left" style="background-color:#aaa;">
-                <div class="container-fluid">
-                <div class="ex1", class="card-decks">
-                {% for feedback in feedbacks %} 
-                        
-                        <div class="card border-primary mb-3" style="width: 47rem;">
-                            <div class="overflow">
-                            <h5 class="card-title">&nbsp;&nbsp;{{feedback.name}}, {{feedback.surname}}
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{feedback.date}} </h5>
-                            
-                            <p class="card-text" > 
-                                <div style="font-size: 0.700em;">&nbsp;&nbsp;{{feedback.feedback}}</div>
-                            </p> 
-                            
-                        </div>    
-                        </div>
-                     
-                {% endfor %}
-                </div>
+        <br>
+        <img src="https://cdn.hbrturkiye.com/r/1000x0/var/uploads/content/1551683546-dijital-ortamda-daha-etkin-iletisim-icin-oneriler-jpg.jpg" 
+        style="width:80%;" height="400" >
+        <br>
+        <br>
 
-            </div>
-            </div>
-            <div class="column right" style="background-color:#bbb;">
-                <form action="{% url 'djangoapp:index' %}"method="post">
-                    <h8> Write your Feedback! </h8>
-                    <div class="form-group">
-            
-                          <div class="mb-3">
-                              <label for="name"><b style="font-size: 0.800em;">name: </b></label>
-                              <textarea class="form-control" id="name" name="name" rows="1" required></textarea>
-                          </div>
-            
-                          <div class="mb-3">
-                            <label for="surname"><b style="font-size: 0.800em;">surname: </b></label>
-                            <textarea class="form-control" id="surname" name="surname" rows="1" required></textarea>
-                          </div>
-            
-                          <div class="mb-3">
-                            <label for="email"><b style="font-size: 0.800em;">email: </b></label>
-                            <textarea class="form-control" id="email" name="email" rows="1" required></textarea>
-                          </div>
-            
-                          <div class="mb-3">
-                              <label for="fback"><b style="font-size: 0.800em;">feedback: </b></label>
-                              <textarea class="form-control" id="fback" name="fback" rows="1" required></textarea>
-                          </div>
-            
-                    </div>
-                    {% csrf_token %}
-                    <div>
-                        <button class="btn btn-primary" type="submit">Gönder</button>
-                    </div>
-                </form>
-            </div>
-          </div>
+        <p class="ex1"> <strong> Figen hocayı +905352323149
+       numaralı telefonunda arayabilir veya intagram'da dm den iletişime geçebilirsiniz
+           
+        </strong></p1>
+          
          
           
 
