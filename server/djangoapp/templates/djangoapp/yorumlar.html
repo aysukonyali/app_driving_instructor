@@ -68,7 +68,7 @@
         }
         div.overflow {
         
-        width: 47rem; 
+        width: 60rem; 
         
         }
         
@@ -93,8 +93,6 @@
         text-align: center;
         text-decoration: none;
         margin: 5px 2px;
-        left:1065px; 
-        top:3px;
         position:Relative;
         }
         .fa-facebook {
@@ -106,8 +104,6 @@
         text-align: center;
         text-decoration: none;
         margin: 5px 2px;
-        left:1060px; 
-        top:3px;
         position:Relative;
         }
         .fa-phone {
@@ -117,10 +113,12 @@
         text-align: center;
         text-decoration: none;
         margin: 5px 2px;
-        left:1048px; 
-        top:8px;
         position:Relative;
-}
+}       
+        .container-fluid{
+        max-width: 1000px;
+        margin: auto;
+        }
         
         </style>
 </head>
@@ -135,24 +133,59 @@
             <li class="first"><a href="{% url 'djangoapp:yorumlar' %}">Öğrenci Yorumları</a></li>
             <li class="first"><a href="{% url 'djangoapp:iletisim' %}">İletişim</a></li>
           </ul>
-
+          <div class="container-fluid">
           <a href="https://www.instagram.com/direksiyondersi.figenhoca/" class="fa fa-instagram"></a>    <!-- instagram icon -->
           <a href="https://www.facebook.com/figen.korkutan" class="fa fa-facebook"></a>    <!-- facebook icon -->
           <a href="tel:+905352323149">
             <i class="fa fa-phone" style="font-size:48px;color:red"></i>
           </a> 
-
+          </div>
 
        
         <br>
-          <p class="ex1"> <strong> Figen Hoca'nın Öğrencilerinin Yaptıkları Yorumlar </strong></p1>
-          <div class="row", class="ex1">
-            <div class="column left" style="background-color:#aaa;">
+        <div class="container-fluid">
+            <form action="{% url 'djangoapp:index' %}"method="post">
+                <h8> Write your Feedback! </h8>
+                <div class="form-group">
+        
+                      <div class="mb-3">
+                          <label for="name"><b style="font-size: 0.800em;">name: </b></label>
+                          <textarea class="form-control" id="name" name="name" rows="1" required></textarea>
+                      </div>
+        
+                      <div class="mb-3">
+                        <label for="surname"><b style="font-size: 0.800em;">surname: </b></label>
+                        <textarea class="form-control" id="surname" name="surname" rows="1" required></textarea>
+                      </div>
+        
+                      <div class="mb-3">
+                        <label for="email"><b style="font-size: 0.800em;">email: </b></label>
+                        <textarea class="form-control" id="email" name="email" rows="1" required></textarea>
+                      </div>
+        
+                      <div class="mb-3">
+                          <label for="fback"><b style="font-size: 0.800em;">feedback: </b></label>
+                          <textarea class="form-control" id="fback" name="fback" rows="1" required></textarea>
+                      </div>
+        
+                </div>
+                {% csrf_token %}
+                <div>
+                    <button class="btn btn-primary" type="submit">Gönder</button>
+                </div>
+            </form>
+            <br>
+            <p class="ex1"> <strong> Figen Hoca'nın Öğrencilerinin Yaptıkları Yorumlar </strong></p1>
+        </div>
+        <br>
+          
+         <!-- <div class="row", class="ex1"> -->
+         <!--   <div class="column left" style="background-color:#aaa;"> -->
                 <div class="container-fluid">
-                <div class="ex1", class="card-decks">
+                <div class="card-decks">
                 {% for feedback in feedbacks %} 
                         
-                        <div class="card border-primary mb-3" style="width: 47rem;">
+                        <div class="card border-primary mb-3" style="width: 60rem;">
                             <div class="overflow">
                             <h5 class="card-title">&nbsp;&nbsp;{{feedback.name}}, {{feedback.surname}}
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{feedback.date}} </h5>
@@ -162,46 +195,16 @@
                             </p> 
                             
                         </div>    
-                        </div>
+                </div>
                      
                 {% endfor %}
                 </div>
+               
 
-            </div>
-            </div>
-            <div class="column right" style="background-color:#bbb;">
-                <form action="{% url 'djangoapp:index' %}"method="post">
-                    <h8> Write your Feedback! </h8>
-                    <div class="form-group">
-            
-                          <div class="mb-3">
-                              <label for="name"><b style="font-size: 0.800em;">name: </b></label>
-                              <textarea class="form-control" id="name" name="name" rows="1" required></textarea>
-                          </div>
-            
-                          <div class="mb-3">
-                            <label for="surname"><b style="font-size: 0.800em;">surname: </b></label>
-                            <textarea class="form-control" id="surname" name="surname" rows="1" required></textarea>
-                          </div>
-            
-                          <div class="mb-3">
-                            <label for="email"><b style="font-size: 0.800em;">email: </b></label>
-                            <textarea class="form-control" id="email" name="email" rows="1" required></textarea>
-                          </div>
-            
-                          <div class="mb-3">
-                              <label for="fback"><b style="font-size: 0.800em;">feedback: </b></label>
-                              <textarea class="form-control" id="fback" name="fback" rows="1" required></textarea>
-                          </div>
-            
-                    </div>
-                    {% csrf_token %}
-                    <div>
-                        <button class="btn btn-primary" type="submit">Gönder</button>
-                    </div>
-                </form>
-            </div>
-          </div>
+           <!-- </div> -->
+           <!-- </div> -->
+           
+         
          
           
 

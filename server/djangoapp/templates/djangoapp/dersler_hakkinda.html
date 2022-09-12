@@ -88,8 +88,6 @@
         text-align: center;
         text-decoration: none;
         margin: 5px 2px;
-        left:1065px; 
-        top:3px;
         position:Relative;
         }
         .fa-facebook {
@@ -101,8 +99,6 @@
         text-align: center;
         text-decoration: none;
         margin: 5px 2px;
-        left:1060px; 
-        top:3px;
         position:Relative;
         }
         .fa-phone {
@@ -112,14 +108,16 @@
         text-align: center;
         text-decoration: none;
         margin: 5px 2px;
-        left:1048px; 
-        top:8px;
         position:Relative;
         }
         img{
         display: block;
         margin-left: auto;
         margin-right: auto;
+        }
+        .container-fluid{
+        max-width: 1000px;
+        margin: auto;
         }
         
         </style>
@@ -135,12 +133,13 @@
             <li class="first"><a href="{% url 'djangoapp:yorumlar' %}">Öğrenci Yorumları</a></li>
             <li class="first"><a href="{% url 'djangoapp:iletisim' %}">İletişim</a></li>
           </ul>
-
+          <div class="container-fluid">
           <a href="https://www.instagram.com/direksiyondersi.figenhoca/" class="fa fa-instagram"></a>    <!-- instagram icon -->
           <a href="https://www.facebook.com/figen.korkutan" class="fa fa-facebook"></a>    <!-- facebook icon -->
           <a href="tel:+905352323149">
             <i class="fa fa-phone" style="font-size:48px;color:red"></i>
           </a> 
+        
 
         <br>
         <br>
@@ -154,7 +153,7 @@
             kadar iptal etme hakkınız vardır. Fiyat blgisi almak için Figen Hoca ile iletişime geçiniz.
            
         </strong></p1>
-          
+    </div>
          
           
 

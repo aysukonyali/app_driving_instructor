@@ -93,8 +93,6 @@
         text-align: center;
         text-decoration: none;
         margin: 5px 2px;
-        left:1065px; 
-        top:3px;
         position:Relative;
         }
         .fa-facebook {
@@ -106,8 +104,6 @@
         text-align: center;
         text-decoration: none;
         margin: 5px 2px;
-        left:1060px; 
-        top:3px;
         position:Relative;
         }
         .fa-phone {
@@ -117,10 +113,12 @@
         text-align: center;
         text-decoration: none;
         margin: 5px 2px;
-        left:1048px; 
-        top:8px;
         position:Relative;
 }
+        .container-fluid{
+        max-width: 1000px;
+        margin: auto;
+        }
         
         </style>
 </head>
@@ -135,7 +133,7 @@
             <li class="first"><a href="{% url 'djangoapp:yorumlar' %}">Öğrenci Yorumları</a></li>
             <li class="first"><a href="{% url 'djangoapp:iletisim' %}">İletişim</a></li>
           </ul>
-
+          <div class="container-fluid">
           <a href="https://www.instagram.com/direksiyondersi.figenhoca/" class="fa fa-instagram"></a>    <!-- instagram icon -->
           <a href="https://www.facebook.com/figen.korkutan" class="fa fa-facebook"></a>    <!-- facebook icon -->
           <a href="tel:+905352323149">
@@ -149,7 +147,7 @@
             Figen Hoca 25 yıllık meslek tecrübesine sahiptir. Engin bilgisi ve sıcak kanlı yapısıyla ders verdiği öğrencilerinin hepsi en kısa sürede
             trafikte yaşağı korkuları yenmiş ve güçlü bir direksiyon hakimiyeti kazanmıştır.</strong></p1>
           
-         
+        </div>
           
 
     </body>

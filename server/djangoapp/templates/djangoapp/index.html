@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Direksiyon Hocası Figen Hoca</title>
+    <title>Direksiyon Eğitmeni Figen Hoca</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>  
@@ -76,7 +76,7 @@
         div.overflow {
         
         white-space: nowrap;  
-        width: 47rem; 
+       /* width: 55rem;  */
         overflow: hidden;
         text-overflow: ellipsis; 
         }
@@ -168,8 +168,7 @@
         text-align: center;
         text-decoration: none;
         margin: 5px 2px;
-        left:1164px; 
-        top:0px;
+        
         position:Relative;
         }
         .fa-facebook {
@@ -181,8 +180,7 @@
         text-align: center;
         text-decoration: none;
         margin: 5px 2px;
-        left:1093px; 
-        top:57px;
+       
         position:Relative;
         }
         .fa-phone {
@@ -192,9 +190,17 @@
         text-align: center;
         text-decoration: none;
         margin: 5px 2px;
-        left:1022px; 
-        top:118px;
+        
         position:Relative;
+}      .container-fluid{
+        max-width: 1000px;
+        margin: auto;
+        }
+        .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
 }
         
         </style>
@@ -209,8 +215,9 @@
             <li class="first"><a href="{% url 'djangoapp:dersler_hakkinda' %}">Dersler Hakkında</a></li>
             <li class="first"><a href="{% url 'djangoapp:yorumlar' %}">Öğrenci Yorumları</a></li>
             <li class="first"><a href="{% url 'djangoapp:iletisim' %}">İletişim</a></li>
-            <a href="#" class="fa fa-instagram"></a>    <!-- instagram icon -->
+        
           </ul>
+          <div class="container-fluid">
           <a href="https://www.instagram.com/direksiyondersi.figenhoca/" class="fa fa-instagram"></a>    <!-- instagram icon -->
           <a href="https://www.facebook.com/figen.korkutan" class="fa fa-facebook"></a>    <!-- facebook icon -->
           <a href="tel:+905352323149">
@@ -220,13 +227,13 @@
           <a href="tel:+905352323149">
             <button style="font-size:22px"> Figen Hoca'dan ders almak için arayın 05352323149 <i class="fa fa-phone1"></i></button>
           </a>  
-           
+         </div>
           <br>
         <!-- --------------------------------------------------Slide Show----------------------------------------- -->  
         <div class="slideshow-container">
             <div class="mySlides fade">
                 <img src="https://www.seyirkafe.com/wp-content/uploads/2015/03/Across-forest.jpg" 
-                 width="1000" height="400">
+                  class="center">
                 <div class="centered">
                     <div id="myDIV"> 
                    <h1>  <strong>Figen Hoca'dan Bayanlara Özel Direksiyon Dersi </strong> </h1>
@@ -236,7 +243,7 @@
             
             <div class="mySlides fade">
                 <img src="https://www.tasimacilar.com/d/other/figen-korkutan.jpg" 
-                 width="1000" height="450">
+                  class="center">
                 <div class="centered">
                     <div id="myDIV">
                     <h1>  <strong> 
@@ -278,6 +285,7 @@
 
         <!-- --------------------------------------------------Slide Show----------------------------------------- -->  
         <br>
+        <div class="container-fluid">
         <p class="ex1", style="font-size:16px;">
             Milli Eğitim Bakanlığı'ndan öğretmen belgesine sahip olup direksiyon eğitimi vermekteyim. Direksiyon eğitimi almak isteyenlere üstün hizmet kalitesini ilke edinerek uzun yıllardan bu yana eğitim vermekteyim. Uzun yılların bilgi birikimi ve tecrübesiyle %100 öğrencilerin memnuniyetini ilke edinmiş, konusunda uzman, yaptığı işte başarıyı en üst seviyede tutmaya çalışmayı amaç edindim.
         </p>
@@ -301,14 +309,16 @@
         <br>
         <br>
           <p class="ex1"> <strong> Figen Hoca'nın Öğrencilerinin Yaptıkları Yorumlar </strong></p1>
-          <div class="row", class="ex1">
-            <div class="column left" style="background-color:#aaa;">
+          </div>
+        <!--  <div class="row", class="ex1"> --> 
+        <!--     <div class="column left" style="background-color:#aaa;"> --> 
+               
                 <div class="container-fluid">
-                <div class="ex1", class="card-decks">
+                <div class="card-decks">
                 {% for feedback in feedbacks %}
                         {% if forloop.counter <= 5 %}    
                         
-                        <div class="card border-primary mb-3" style="width: 47rem;">
+                        <div class="card border-primary mb-3" >
                             <div class="overflow">
                             <h5 class="card-title">&nbsp;&nbsp;{{feedback.name}}, {{feedback.surname}}
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{feedback.date}} </h5>
@@ -326,9 +336,11 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="{% url 'djangoapp:yorumlar' %}">Yorumların Devamını Okumak İçin Tıklayın...</a>
                 </div>
-            </div>
-            </div>
-            <div class="column right" style="background-color:#bbb;">
+                </div> 
+        <!--   </div> -->  
+        <!--    <div class="column right" style="background-color:#bbb;"> --> 
+                  <br>
+                <div class="container-fluid">
                 <form action="{% url 'djangoapp:index' %}"method="post">
                     <h8> Write your Feedback! </h8>
                     <div class="form-group">
@@ -359,8 +371,9 @@
                         <button class="btn btn-primary" type="submit">Gönder</button>
                     </div>
                 </form>
-            </div>
-          </div>
+                </div>
+        <!--    </div> --> 
+        <!--    </div> -->
          
           
 
